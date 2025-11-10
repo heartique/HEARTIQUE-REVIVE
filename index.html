@@ -8,7 +8,7 @@
     const theme = savedTheme || (prefersDark ? "dark" : "light");
     document.documentElement.setAttribute("data-theme", theme);
   </script>
-  
+
   <!-- ⚙ Basic Meta -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -21,18 +21,18 @@
   <meta name="author" content="Heartique Nursing Nexus Team">
   <meta name="robots" content="index, follow">
 
-  <!-- 🌐 Open Graph (Facebook, WhatsApp, etc.) -->
-<meta property="og:title" content="Heartique Nursing Nexus Dashboard">
-<meta property="og:description" content="Your go-to platform for nursing tools, updates, and notes.">
-<meta property="og:image" content="icon-512.png">
-<meta property="og:url" content="https://heartique.github.io/HEARTIQUE-NEXUS-NURSES-ALLIANCE/">
-<meta property="og:type" content="website">
+  <!-- 🌐 Open Graph -->
+  <meta property="og:title" content="Heartique Nursing Nexus Dashboard">
+  <meta property="og:description" content="Your go-to platform for nursing tools, updates, and notes.">
+  <meta property="og:image" content="icon-512.png">
+  <meta property="og:url" content="https://heartique.github.io/HEARTIQUE-NEXUS-NURSES-ALLIANCE/">
+  <meta property="og:type" content="website">
 
-<!-- 🐦 Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Heartique Nursing Nexus Dashboard">
-<meta name="twitter:description" content="Your essential nursing study portal – accessible, simple, powerful.">
-<meta name="twitter:image" content="icon-512.png">
+  <!-- 🐦 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Heartique Nursing Nexus Dashboard">
+  <meta name="twitter:description" content="Your essential nursing study portal – accessible, simple, powerful.">
+  <meta name="twitter:image" content="icon-512.png">
 
   <!-- 📷 Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
@@ -48,20 +48,16 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <!-- 🎯 Optional Preloads (uncomment if needed) -->
-  <!-- <link rel="preload" as="style" href="style.css"> -->
-  <!-- <link rel="preload" as="script" href="script.js"> -->
   <style>
-
     body {
-     font-family: Arial, sans-serif;
-  background-image: url('https://raw.githubusercontent.com/heartique/HEARTIQUE-NEXUS-NURSES-ALLIANCE/main/background4.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 0;
-  padding: 0;
-  color: #333;
+      font-family: Arial, sans-serif;
+      background-image: url('https://raw.githubusercontent.com/heartique/HEARTIQUE-NEXUS-NURSES-ALLIANCE/main/background4.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      color: #333;
     }
     header {
       background: #004a99;
@@ -69,7 +65,6 @@
       padding: 1rem 1.5rem;
       text-align: center;
       position: relative;
-    }
     }
     #logoutBtn {
       position: absolute;
@@ -173,266 +168,63 @@
       border: 2px solid #e53935;
       color: #b71c1c;
     }
-    .tracker-item:hover {
-      opacity: 0.8;
-    }
     footer {
       text-align: center;
       font-size: 0.9rem;
       padding: 1rem;
       color: #666;
     }
-    @media (max-width: 600px) {
-      .main-nck-paper {
-  background: linear-gradient(135deg, #ff9800, #f44336);
-  color: #fff;
-  font-weight: 900;
-  font-size: 1.4rem;
-  border-radius: 18px;
-  border: 4px solid #ff5722;
-  box-shadow: 0 0 20px rgba(255, 87, 34, 0.4);
-  text-align: center;
-  flex: 1 1 100%;
-  padding: 2rem 1rem;
-    margin-top: 1rem;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease; 
-}
-.main-nck-paper:hover {
-  background: linear-gradient(135deg, #ff7043, #e53935);
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 87, 34, 0.7);
-}
-      ul li {
-        flex: 1 1 100%;
-      }
-      .tracker {
-        flex-direction: column;
+
+    /* Refresh Button */
+    #refreshBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      background: linear-gradient(to right, #004a99, #8000ff);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
     }
-}
-.custom-tab-container {
-  display: flex;
-  flex-wrap: nowrap; /* no wrap so they stay side by side */
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* Keep tab width fixed so they fit side by side */
-.custom-tab-card {
-  flex: 0 0 320px; /* fixed width so 2 fit in 1000px */
-  position: relative;
-  background-color: #222;
-  color: #fff !important;
-  border-radius: 14px;
-  min-height: 160px;
-  text-decoration: none !important;
-  display: block;
-  padding: 16px 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  overflow: visible;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 0;
-}
-
-/* Pseudo elements for glowing border (same as before) */
-.custom-tab-card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: 14px;
-  pointer-events: none;
-  z-index: -1;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.6),
-    transparent,
-    transparent,
-    rgba(255,255,255,0.6),
-    transparent
-  );
-  background-size: 200% 200%;
-  animation: revolvingGlow 3s linear infinite;
-  filter: drop-shadow(0 0 8px rgba(0,0,0,0.3));
-}
-
-.custom-tab-vocab::before {
-  filter: drop-shadow(0 0 6px #1d4ed8);
-  animation-name: revolvingGlowBlue;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(29,78,216,0.8),
-    transparent,
-    transparent,
-    rgba(29,78,216,0.8),
-    transparent
-  );
-}
-
-.custom-tab-abbrev::before {
-  filter: drop-shadow(0 0 6px #7c3aed);
-  animation-name: revolvingGlowPurple;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(124,58,237,0.8),
-    transparent,
-    transparent,
-    rgba(124,58,237,0.8),
-    transparent
-  );
-}
-
-/* Keyframes for animation */
-@keyframes revolvingGlowBlue {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-
-@keyframes revolvingGlowPurple {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-
-/* Hover effect */
-.custom-tab-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
-}
-
-/* Keep content above glow */
-.custom-tab-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Text styling */
-.tab-icon {
-  font-size: 1.8rem;
-  margin-bottom: 8px;
-  color: inherit !important;
-}
-
-.tab-content h2 {
-  margin: 0 0 4px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: inherit !important;
-}
-
-.tab-content p {
-  margin: 0 0 8px;
-  font-size: 0.88rem;
-  font-weight: 400;
-  line-height: 1.3;
-  color: inherit !important;
-}
-
-.badge {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff !important;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 500;
-}
-
-/* Responsive: stack vertically on small screens */
-@media (max-width: 768px) {
-  .custom-tab-container {
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-  }
-  .custom-tab-card {
-    flex: 1 1 90%;
-    max-width: 360px;
-    margin-bottom: 20px;
-  }
-}
-/* Refresh Button */
-#refreshBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  background: linear-gradient(to right, #004a99, #8000ff);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 15px;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease;
-}
-#refreshBtn:hover {
-  transform: scale(1.1);
-}
-
-/* Shockwave Animation */
-#shockwave {
-  position: fixed;
-  bottom: 27px;
-  right: 27px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: rgba(128, 0, 255, 0.3);
-  opacity: 0;
-  z-index: 9998;
-  pointer-events: none;
-}
-
-   
+    #refreshBtn:hover {
+      transform: scale(1.1);
+    }
+    #shockwave {
+      position: fixed;
+      bottom: 27px;
+      right: 27px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(128, 0, 255, 0.3);
+      opacity: 0;
+      z-index: 9998;
+      pointer-events: none;
+    }
   </style>
 </head>
-  <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(reg => console.log('✅ Service Worker registered:', reg.scope))
-        .catch(err => console.log('❌ Service Worker registration failed:', err));
-    });
-  }
-</script>
-   
-  <!-- 🔄 Refresh Button -->
-<button id="refreshBtn" title="Refresh">🔄</button>
-<div id="shockwave"></div>
-
-  <body>
-  <!-- ✅ Ripple Effect Line -->
-<div id="rippleEffect" style="position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(to right, #004a99, #8000ff); opacity: 0; transition: opacity 0.4s; z-index: 999;"></div>
 
 <body style="margin: 0; padding: 0; font-family: Arial, sans-serif;">
-<!-- 🚨 App Closed Overlay -->
-<div id="appClosedOverlay" style="
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  z-index: 999999;
-">
-  <!-- 👤 Top Bar with Profile -->
+
+  <!-- 🌊 Ripple Effect Line -->
+  <div id="rippleEffect" style="position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(to right, #004a99, #8000ff); opacity: 0; transition: opacity 0.4s; z-index: 999;"></div>
+
+  <!-- 🔄 Refresh Button -->
+  <button id="refreshBtn" title="Refresh">🔄</button>
+  <div id="shockwave"></div>
+
+  <!-- 👤 Profile Section -->
   <div id="topBar" style="position: relative; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #f9f9f9;">
     <h1 style="color: #004a99;">MY PROFILE</h1>
-    <button id="profileBtn" style="border-radius: 50%; background: #004a99; color: white; font-size: 1.2rem; border: none; width: 45px; height: 45px; cursor: pointer;">
-      👤
-    </button>
+    <button id="profileBtn" style="border-radius: 50%; background: #004a99; color: white; font-size: 1.2rem; border: none; width: 45px; height: 45px; cursor: pointer;">👤</button>
   </div>
 
-  <!-- 👤 Profile Dropdown Panel -->
+  <!-- Profile Modal -->
   <div id="profileModal" style="display: none; position: absolute; top: 70px; right: 2rem; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.2); z-index: 1000; min-width: 220px;">
     <p><strong>Name:</strong> <span id="modalName">Loading...</span></p>
     <p><strong>Email:</strong> <span id="modalEmail">Loading...</span></p>
@@ -441,7 +233,7 @@
     <button onclick="logout()" style="border: none; padding: 0.5rem 1rem;">Logout</button>
   </div>
 
-  <!-- ⚠️ Delete Confirm Modal -->
+  <!-- ⚠️ Confirm Modal -->
   <div id="confirmModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:2000;">
     <div style="background:white; padding:2rem; border-radius:10px; max-width:300px;">
       <h3 style="color:red;">Confirm Delete</h3>
@@ -451,45 +243,35 @@
     </div>
   </div>
 
-
   <!-- 🔊 Notification Sound -->
-<audio id="notifySound" src="notify.mp3" preload="auto"></audio>
+  <audio id="notifySound" src="notify.mp3" preload="auto"></audio>
+
   <header>
-    <h1>WELCOME TO HEARTIQUE NURSING NEXUS PORTAL❤️</h1>
+    <h1>WELCOME TO HEARTIQUE NURSING NEXUS PORTAL ❤️</h1>
   </header>
+
   <main>
-  <div class="welcome-msg">
-  <h1 id="greeting">Welcome!</h1>
-  <p id="welcomeUser">Welcome! We're glad to have you on the Heartique Nursing Nexus Alliance Portal👋</p>
-<p>This is <strong>Heartique Nursing Nexus Alliance Portal </strong>a dedicated space for all nursing students in kenya. Whether you're just beginning your journey or already progressing in your nursing career, this portal is here to support you every step of the way.</p>
-<p>More than just a resource hub, this is a community where students and professionals come together to grow, support one another, and inspire meaningful change through care and compassion.</p>
-<p>With its simple and organized layout, the portal offers quick access to PTS notes, Block 1–6 materials, revision papers, and co-curricular updates all in one convenient place. No more hassle searching for content; everything you need is just a tap away.</p>
-<p>Use this platform to stay organized, focused, and ahead in your studies. Let’s grow together and become the difference the world needs.</p>
-<p>Stay in the loop and never miss a new feature;  <strong>Join our WhatsApp channel for quick updates and special tips just for you!</strong></p>
-<p class="contact">
-  📧 Contact: <a href="mailto:nursingnexusalliance@gmail.com">nursingnexusalliance@gmail.com</a><br>
-  📞 Phone: <a href="tel:+254717517371">+254 717 517 371</a><br>
-  💬 Stay updated always: <a href="https://whatsapp.com/channel/0029VbBFzgAEawdkJKtRtF2H" target="_blank">Follow our WhatsApp Channnel –Heartique Nursing Nexus Alliance HQ</a>
-  💬 Be part of the movement: <a href="https://chat.whatsapp.com/Lad2s4XXx1AA1TtThbMgWV" target="_blank">Join our WhatsApp Study Group – Heartique Nursing Nexus Alliance</a>
+    <div class="welcome-msg">
+      <h1 id="greeting">Welcome!</h1>
+      <p id="welcomeUser">We're glad to have you on the Heartique Nursing Nexus Alliance Portal 👋</p>
+      <p>This is <strong>Heartique Nursing Nexus Alliance Portal</strong> — a dedicated space for all nursing students in Kenya...</p>
+      <p>Stay updated: <a href="https://whatsapp.com/channel/0029VbBFzgAEawdkJKtRtF2H" target="_blank">Join WhatsApp Channel</a></p>
+      <input type="text" id="searchBar" placeholder="Search notes, papers, and activities..." />
+    </div>
 
-</p>
-
-<input type="text" id="searchBar" placeholder="Search notes, papers, and activities..." />
-</p>
-    <section>
     <!-- 📢 Noticeboard -->
-<div id="noticeboard" style="background-color: #fff8dc; border-left: 6px solid #ffa500; padding: 12px 20px; margin: 20px 0; font-family: Arial, sans-serif; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-  <h3 style="margin-top: 0; color: #d2691e;">
-    📢 Noticeboard <span id="newBadge" style="color: red; font-size: 0.9em; display: none;">(New)</span>
-  </h3>
-  <button id="toggleNotice">Show Notices</button>
-  <ul id="notices" style="margin: 0; padding-left: 20px; color: #333; display: none; transition: all 0.5s ease-in-out; max-height: 0; overflow: hidden;"></ul>
-</div>
-<!-- 📱 Toast Notification -->
-<div id="toast" style="visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 8px; padding: 12px; position: fixed; z-index: 1; left: 50%; bottom: 30px; transform: translateX(-50%); font-size: 16px;"></div>
+    <section>
+      <div id="noticeboard" style="background-color: #fff8dc; border-left: 6px solid #ffa500; padding: 12px 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+        <h3>📢 Noticeboard <span id="newBadge" style="color:red;display:none;">(New)</span></h3>
+        <button id="toggleNotice">Show Notices</button>
+        <ul id="notices" style="display:none; max-height:0; overflow:hidden;"></ul>
+      </div>
+    </section>
 
+    <!-- 📚 Notes Section -->
+    <section>
       <h2>PTS & Block Notes</h2>
-      <ul id="notesList">
+      <ul>
         <li onclick="location.href='pts.html'">PTS Revision Notes</li>
         <li onclick="location.href='block1.html'">Block 1 Notes</li>
         <li onclick="location.href='block2.html'">Block 2 Notes</li>
@@ -497,62 +279,64 @@
         <li onclick="location.href='block4.html'">Block 4 Notes</li>
         <li onclick="location.href='block5.html'">Block 5 Notes</li>
         <li onclick="location.href='block6.html'">Block 6 Notes</li>
-  </ul> 
-<div class="custom-tab-container">
-  <a href="vocabulary.html" class="custom-tab-card custom-tab-vocab">
-    <div class="tab-icon">📘</div>
-    <div class="tab-content">
-      <h2>NURSE WHISPERS</h2>
-      <p>Most-used nursing & medical terms all in one place.</p>
-      <span id="vocab-count" class="badge">Loading...</span>
-    </div>
-  </a>
-
-  <a href="medicalabbreviations.html" class="custom-tab-card custom-tab-abbrev">
-    <div class="tab-icon">⚕️</div>
-    <div class="tab-content">
-      <h2>MED ABBREVIATIONS</h2>
-      <p>Quick access to essential medical abbreviations every nurse must know.</p>
-      <span id="abbrev-count" class="badge">Loading...</span>
-    </div>
-  </a>
-</div>
-     <section>
-  <h2>🎯 Core Objectives for Nursing Students</h2>
-  <ul id="objectivesList">
-    <li class="main-objective-tab" onclick="location.href='objectives.html'">📘 Nursing Study Objectives</li>
-  </ul>
-</section>
-        <section>
-  <h2>📚 Very Important Books & Materials</h2>
- <li class="main-vip-books" onclick="location.href='clinical-manual.html'">
-  📚 <strong>Ultimate Nursing PowerPack</strong><br>
-  <span style="font-size: 0.9rem;">All-in-One: Essentials, Pharma, Anatomy, Clinical</span>
-</li>
-    <li class="main-vip-books" onclick="location.href='exam-secrets.html'">🔐 NCK Exam Secrets & Hacks</li>
-  </ul>
-</section>
       </ul>
     </section>
 
+    <!-- 🔠 Vocabulary Tabs -->
+    <div class="custom-tab-container">
+      <a href="vocabulary.html" class="custom-tab-card custom-tab-vocab">
+        <div class="tab-icon">📘</div>
+        <div class="tab-content">
+          <h2>NURSE WHISPERS</h2>
+          <p>Most-used nursing & medical terms all in one place.</p>
+          <span id="vocab-count" class="badge">Loading...</span>
+        </div>
+      </a>
+      <a href="medicalabbreviations.html" class="custom-tab-card custom-tab-abbrev">
+        <div class="tab-icon">⚕️</div>
+        <div class="tab-content">
+          <h2>MED ABBREVIATIONS</h2>
+          <p>Essential medical abbreviations every nurse must know.</p>
+          <span id="abbrev-count" class="badge">Loading...</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- 🎯 Core Objectives -->
+    <section>
+      <h2>🎯 Core Objectives for Nursing Students</h2>
+      <ul>
+        <li onclick="location.href='objectives.html'">📘 Nursing Study Objectives</li>
+      </ul>
+    </section>
+
+    <!-- 📚 Books -->
+    <section>
+      <h2>📚 Very Important Books & Materials</h2>
+      <ul>
+        <li onclick="location.href='clinical-manual.html'">📚 <strong>Ultimate Nursing PowerPack</strong></li>
+        <li onclick="location.href='exam-secrets.html'">🔐 NCK Exam Secrets & Hacks</li>
+      </ul>
+    </section>
+
+    <!-- 📘 Revision Papers -->
     <section>
       <h2>Past Revision Papers</h2>
-      <ul id="pastPapersList">
-        
+      <ul>
         <li onclick="location.href='pts-revision.html'">📚 PTS Revision Portal</li>
-       <li onclick="location.href='block1-revision.html'">📚 Block 1 Revision Portal</li>
+        <li onclick="location.href='block1-revision.html'">📚 Block 1 Revision Portal</li>
         <li onclick="location.href='block2-revision.html'">📚 Block 2 Revision Portal</li>
-       <li onclick="location.href='block3-revision.html'">📚 Block 3 Revision Portal</li>
-      <li onclick="location.href='block4-revision.html'">📚 Block 4 Revision Portal</li>
+        <li onclick="location.href='block3-revision.html'">📚 Block 3 Revision Portal</li>
+        <li onclick="location.href='block4-revision.html'">📚 Block 4 Revision Portal</li>
         <li onclick="location.href='block5-revision.html'">📚 Block 5 Revision Portal</li>
         <li onclick="location.href='block6-revision.html'">📚 Block 6 Revision Portal</li>
-  <li class="main-FQE-paper" onclick="location.href='FQE1.html'">✨ <strong> FQE Paper 1 Revision Papers</strong></li>
-         <li class="main-FQE-paper" onclick="location.href='FQE2.html'">✨ <strong> FQE Paper 2 Revision Papers</strong></li>
-         <li class="main-nck-paper" onclick="location.href='nck-paper1.html'">✨ <strong>NCK Paper 1 Revision Papers</strong></li>
-  <li class="main-nck-paper" onclick="location.href='nck-paper2.html'">✨ <strong>NCK Paper 2 Revision Papers</strong></li>
-        </ul>
-      
-</a>
+        <li class="main-FQE-paper" onclick="location.href='FQE1.html'">✨ <strong>FQE Paper 1</strong></li>
+        <li class="main-FQE-paper" onclick="location.href='FQE2.html'">✨ <strong>FQE Paper 2</strong></li>
+        <li class="main-nck-paper" onclick="location.href='nck-paper1.html'">✨ <strong>NCK Paper 1</strong></li>
+        <li class="main-nck-paper" onclick="location.href='nck-paper2.html'">✨ <strong>NCK Paper 2</strong></li>
+      </ul>
+    </section>
+
 
 <section class="quiz-tools-section">
   <h2 class="section-title">🧠 Study Tools Zone</h2>
@@ -1257,6 +1041,7 @@ if (!error && userData?.full_name) {
 
 </body>
 </html>
+
 
 
 
